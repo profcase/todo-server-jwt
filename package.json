@@ -1,0 +1,41 @@
+{
+  "name": "todo-server-jwt",
+  "version": "1.0.0",
+  "description": "Todo server with JWT using MongoDB, Node.js, and Express web framework",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/profcase/todo-server-jwt"
+  },
+  "keywords": [
+    "Todo",
+    "MongoDB",
+    "Node.js",
+    "Express",
+    "web",
+    "service",
+    "JSON",
+    "Authentication",
+    "Authorization",
+    "JWT",
+    "JSON Web Token"
+  ],
+  "author": "Denise Case",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "latest",
+    "config": "latest",
+    "cors": "latest",
+    "express": "latest",
+    "jsonwebtoken": "latest",
+    "mongoose": "latest",
+    "morgan": "latest"
+  },
+  "devDependencies": {
+    "nodemon": "latest"
+  }
+}
