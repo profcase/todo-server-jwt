@@ -63,7 +63,8 @@ choco upgrade all -y
 - [Heroku](https://www.heroku.com/)
 - Create free account
 - New / Create new app / enter a name / create app.
-- Under app settings, create environment variable MONGODB_URI and set to Atlas Connection string (private and secure).
+- Under app Settings, create environment variable MONGODB_URI and set to Atlas Connection string (private and secure).
+- Under app Deploy / Deployment mthod / select GitHub master branch to deploy when there's a new commit pushed to master.
 
 ## View Heroku app in browser
 
