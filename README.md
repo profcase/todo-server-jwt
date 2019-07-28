@@ -51,7 +51,7 @@ choco upgrade all -y
 - Clone your repo down to your local machine
 - Create config/default.json
 - Install dependencies with `npm install`
-- Run the server locally with `npm start`
+- Run the server locally with `npm run dev`
 
 ## View local app in browser
 
