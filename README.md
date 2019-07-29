@@ -150,13 +150,5 @@ Should return something like:
 
 ## See Also
 
-- [js-colors](https://github.com/profcase/js-colors)
-- [js-console](https://github.com/profcase/js-console)
-- [js-e1](https://github.com/profcase/js-e1)
-- [js-gui](https://github.com/profcase/js-gui)
-- [js-gui-storage](https://github.com/profcase/js-gui-storage)
-- [js-gui-vue](https://github.com/denisecase/js-gui-vue)
-- [js-node](https://github.com/denisecase/js-node)
-- [js-node-express](https://github.com/denisecase/js-node-express)
-- [todo-server](https://github.com/profcase/todo-server)
-- [todo-server-jwt](https://github.com/profcase/todo-server-jwt)
+- [More App Examples](https://profcase.github.io/web-apps-list/)
+
