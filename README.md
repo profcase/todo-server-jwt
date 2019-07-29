@@ -86,9 +86,9 @@ Collection: "todo-server-jwt (local)"
 
 Collection: "todo-server-jwt (heroku)"
 
-- GET <https://todo-server-heroku-app.herokuapp.com/todo>
-- POST <https://todo-server-heroku-app.herokuapp.com/todo> - set Body / Raw / JSON - Send
-- DELETE <https://todo-server-heroku-app.herokuapp.com/todo/id> - copy id from post call and replace id - Send
+- GET <https://todo-server-jwt-heroku-app.herokuapp.com/todo>
+- POST <https://todo-server-jwt-heroku-app.herokuapp.com/todo> - set Body / Raw / JSON - Send
+- DELETE <https://todo-server-jwt-heroku-app.herokuapp.com/todo/id> - copy id from post call and replace id - Send
 
 ## Create user with Postman (provides token)
 
@@ -106,9 +106,9 @@ Should return something like:
 
 ```JSON
 {
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkM2RmYTcwOGFkNTc0MTYyNGZlOWNiZSIsImlhdCI6MTU2NDM0Mjg5NiwiZXhwIjoxNTY0MzQ2NDk2fQ.rlOyMPuHCx8N5puRRWr-kb--GRpYgocrEwAJxY9twgw",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkM2UzNWU2ZGJkNjYwMzRhMDQ0YzhhMCIsImlhdCI6MTU2NDM1ODExOCwiZXhwIjoxNTY0MzYxNzE4fQ.ivF5gU0BhJvOdf31aPH8qTTWadbbyaw-FwkVMSh0u8c",
     "user": {
-        "id": "5d3dfa708ad5741624fe9cbe",
+        "id": "5d3e35e6dbd66034a044c8a0",
         "name": "Denise",
         "email": "dcase@nwmissouri.edu"
     }

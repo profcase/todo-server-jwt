@@ -7,8 +7,8 @@ const router = express.Router()
 
 // @route   GET /todo
 // @desc    Get All Todos
-// @access  Private
-router.get('/', auth, (req, res) => {
+// @access  Public
+router.get('/', (req, res) => {
   Todo.find()
     .sort({ date: -1 })
     .then(all => res.json(all));
