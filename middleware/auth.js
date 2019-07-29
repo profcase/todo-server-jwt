@@ -13,9 +13,7 @@ const auth = async (req, res, next) => {
     // Add user from payload
     req.user = decoded;
     next() // pass along to next handler
-  } catch (error) { 
-    res.status(400).json({ msg: 'Token is not valid' })
-   }
+  } catch (error) { res.status(400).json({ msg: 'Token is not valid' }) }
 }
 
 module.exports = auth
