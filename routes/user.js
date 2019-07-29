@@ -4,15 +4,13 @@ const express = require('express')
 const jwt = require('jsonwebtoken')
 const User = require('../models/user.js')
 
-// create router for export
 const router = express.Router()
 
 // @route   POST /user
 // @desc    Create new User
 // @access  Public
 router.post('/', (req, res) => {
-  const { name, email, password } = req.body;
-
+  const { name, email, password } = req.body
   if (!name || !email || !password) { return res.status(400).json({ msg: 'Please enter all fields' }) }
 
   // Check for existing user

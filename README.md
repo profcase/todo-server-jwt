@@ -64,6 +64,7 @@ choco upgrade all -y
 - Create free account
 - New / Create new app / enter a name / create app.
 - Under app Settings, create environment variable MONGODB_URI and set to Atlas Connection string (private and secure).
+- Under app Settings, create environment variable JWT_SECRET and set to same value as in config/default.json.
 - Under app Deploy / Deployment mthod / select GitHub master branch to deploy when there's a new commit pushed to master.
 
 ## View Heroku app in browser
@@ -76,19 +77,22 @@ Optional: update the following URIs to point to your Heroku app:
 ## Test requests with Postman
 
 - Install [Postman](https://www.getpostman.com/)
+- Additional details in following sections
 
 Collection: "todo-server-jwt (local)"
 
 - Set VERB + URI (and configure request if sending POST data)
 - GET <http://localhost:5002/todo> - Send
-- POST <http://localhost:5002/todo> - set Body / Raw / JSON / set "name" - Send
-- DELETE <http://localhost:5002/todo/id> - copy id from post call and replace id - Send
+- POST <http://localhost:5002/user> - set  Body / Raw / JSON & get back token
+- POST <http://localhost:5002/todo> - set Auth / Bearer Token & Body / Raw / JSON / set "name" - Send
+- DELETE <http://localhost:5002/todo/id> - set Auth / Bearer Token & copy id from post call and replace id - Send
 
 Collection: "todo-server-jwt (heroku)"
 
 - GET <https://todo-server-jwt-heroku-app.herokuapp.com/todo>
-- POST <https://todo-server-jwt-heroku-app.herokuapp.com/todo> - set Body / Raw / JSON - Send
-- DELETE <https://todo-server-jwt-heroku-app.herokuapp.com/todo/id> - copy id from post call and replace id - Send
+- POST <https://todo-server-jwt-heroku-app.herokuapp.com/user> - set  Body / Raw / JSON & get back token
+- POST <https://todo-server-jwt-heroku-app.herokuapp.com/todo> - set Auth / Bearer Token & set Body / Raw / JSON - Send
+- DELETE <https://todo-server-jwt-heroku-app.herokuapp.com/todo/id> - set Auth / Bearer Token copy id from post call and replace id - Send
 
 ## Create user with Postman (provides token)
 
@@ -106,7 +110,7 @@ Should return something like:
 
 ```JSON
 {
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkM2UzNWU2ZGJkNjYwMzRhMDQ0YzhhMCIsImlhdCI6MTU2NDM1ODExOCwiZXhwIjoxNTY0MzYxNzE4fQ.ivF5gU0BhJvOdf31aPH8qTTWadbbyaw-FwkVMSh0u8c",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkM2U0MGYyMjNiMWE3MGVkNGVhOTU1NCIsImlhdCI6MTU2NDM2MDk0NiwiZXhwIjoxNTY0MzY0NTQ2fQ.ggEXYwFa2_-0CVAh1uC77FtM1N6ZdKFblC2S4iI8G6Y",
     "user": {
         "id": "5d3e35e6dbd66034a044c8a0",
         "name": "Denise",
@@ -115,13 +119,33 @@ Should return something like:
 }
 ```
 
-## Now manage todos (providing token)
+1. POST <http://localhost:5002/auth> - set Body / Raw / JSON - Send
 
-1. GET <http://localhost:5002/todo> - set Auth / type = 'Bearer Token' / set token based on value above
+```JSON
+{
+  "name": "Denise",
+  "email": "dcase@nwmissouri.edu",
+  "password": "Denise"
+}
+```
+
+Should return something like:
+
+```JSON
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkM2UzNWU2ZGJkNjYwMzRhMDQ0YzhhMCIsImlhdCI6MTU2NDM2MTE2MCwiZXhwIjoxNTY0MzY0NzYwfQ.o2J4AoqOqBxjan4oJ_4zXNqzaOTtrW5VjRkkKh8qr3A",
+    "user": {
+        "id": "5d3e35e6dbd66034a044c8a0",
+        "name": "Denise",
+        "email": "dcase@nwmissouri.edu"
+    }
+}
+```
 
 ## Resources
 
 - [JSON Web Tokens](https://jwt.io/)
+- [JWT Authentication & Authorization in NodeJs/Express & MongoDB REST APIs(2019)](https://medium.com/swlh/jwt-authentication-authorization-in-nodejs-express-mongodb-rest-apis-2019-ad14ec818122)
 - [MERN Shopping List](https://github.com/bradtraversy/mern_shopping_list)
 
 ## See Also
