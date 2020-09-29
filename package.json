@@ -33,7 +33,7 @@
     "cors": "latest",
     "express": "latest",
     "jsonwebtoken": "latest",
-    "mongoose": "5.9.15",
+    "mongoose": "5.9.17",
     "morgan": "latest"
   },
   "devDependencies": {
