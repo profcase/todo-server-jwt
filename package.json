@@ -29,7 +29,7 @@
   "license": "MIT",
   "dependencies": {
     "bcryptjs": "latest",
-    "config": "latest",
+    "config": "3.3.2",
     "cors": "latest",
     "express": "latest",
     "jsonwebtoken": "latest",
