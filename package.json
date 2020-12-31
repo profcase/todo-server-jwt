@@ -29,11 +29,11 @@
   "license": "MIT",
   "dependencies": {
     "bcryptjs": "latest",
-    "config": "3.3.3",
+    "config": "latest",
     "cors": "latest",
     "express": "latest",
     "jsonwebtoken": "latest",
-    "mongoose": "5.11.7",
+    "mongoose": "latest",
     "morgan": "latest"
   },
   "devDependencies": {
